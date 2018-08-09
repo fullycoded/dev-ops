@@ -1,1 +1,6 @@
-New-Item c:\new_file.txt -type file
+$data = Get-Content "C:\AzureData\CustomData.bin"
+
+foreach ($line in $data)
+{
+    mkdir -Path "c:\$line"
+}
