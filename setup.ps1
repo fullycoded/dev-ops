@@ -2,7 +2,7 @@
 
 $env = Get-Content "C:\AzureData\CustomData.bin" -First 1
 
-cd 'c:\env\'
+cd 'c:\tspazuredata\env\'
 
 & .\$env.bat
 
