@@ -8,6 +8,6 @@ cd 'c:\tspazuredata\'
 
 refreshenv
 
-cd 'c:\tsp service manager\'
+cd 'c:\tspservicemanager\'
 
 & .\setup.ps1 -integrationsetup $true
