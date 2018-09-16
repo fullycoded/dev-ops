@@ -1,4 +1,4 @@
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
+iisreset;
 
 $env = Get-Content "C:\AzureData\CustomData.bin" -First 1
 
@@ -8,8 +8,7 @@ cd 'c:\tspazuredata\'
 
 refreshenv
 
-start powershell {cd 'c:\tspservicemanager\'; & .\setup.ps1 -integrationsetup $true; Read-Host}
-
+start powershell {[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; cd 'c:\tspservicemanager\'; & .\setup.ps1 -integrationsetup $true; Read-Host }
 
 
 
