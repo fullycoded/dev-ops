@@ -8,6 +8,8 @@ cd 'c:\tspazuredata\'
 
 refreshenv
 
-cd 'c:\tspservicemanager\'
+start powershell {cd 'c:\tspservicemanager\'; & .\setup.ps1 -integrationsetup $true; Read-Host}
 
-& .\setup.ps1 -integrationsetup $true
+
+
+
