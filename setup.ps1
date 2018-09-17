@@ -8,6 +8,7 @@ cd 'c:\tspazuredata\'
 
 & .\sm-$env.ps1
 
-cd 'c:\tspservicemanager\';
+$password = ConvertTo-SecureString "$env:TSP_SM_LOCAL_PASSWORD" -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTERNAME\spinnaker", $password)
 
-& .\setup.ps1 -integrationsetup $true;
+start-process powershell.exe -Credential $credential {cd 'c:\tspservicemanager\'; & .\setup.ps1 -integrationsetup $true;}
