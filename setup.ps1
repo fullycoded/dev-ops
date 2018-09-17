@@ -8,6 +8,6 @@ cd 'c:\tspazuredata\'
 
 & .\sm-$env.ps1
 
-'c:\tspservicemanager\';
+cd 'c:\tspservicemanager\';
 
 & .\setup.ps1 -integrationsetup $true;
