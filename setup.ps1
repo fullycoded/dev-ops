@@ -15,4 +15,6 @@ $tempFile = "$env:systemdrive\temp-setup.ps1"
 
 "$command" | Out-file $tempFile
 
+Write-Host $tempFile
+
 psexec \\localhost -accepteula -i 2 -h -u $username -p $password powershell -executionpolicy bypass -file "$tempFile"
