@@ -1,6 +1,7 @@
 iisreset;
 
 $env = Get-Content "C:\AzureData\CustomData.bin" -First 1
+cd 'c:\tspazuredata\'
 & .\sm-$env.ps1
 
 $password = ConvertTo-SecureString "$env:TSP_SM_LOCAL_PASSWORD" -AsPlainText -Force
