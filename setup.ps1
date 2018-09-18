@@ -17,4 +17,4 @@ $tempFile = "c:\temp-setup.ps1"
 
 Write-Host "File is: $tempFile"
 
-psexec \\localhost -accepteula -i 2 -h -u $username -p $password powershell -executionpolicy bypass -file "$tempFile"
+psexec \\localhost -accepteula -i 2 -h -u $username -p $password powershell -executionpolicy Unrestricted -file "$tempFile"
