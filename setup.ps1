@@ -8,8 +8,8 @@ $username = "spinnaker"
 
 $command = { cd 'c:\tspazuredata\'; & .\sm-dev.ps1; cd 'c:\tspservicemanager\'; & .\setup.ps1 -integrationsetup $true; }
 
-$tempFile = "$env:TEMP\temp-setup.ps1"
+$tempFile = "$env:systemdrive\temp-setup.ps1"
 
-"$command; Remove-Item `$PSCommandPath" | Out-file $tempFile
+"$command" | Out-file $tempFile
 
 psexec -accepteula -i 2 -h -u $username -p $password powershell -executionpolicy bypass -file "$tempFile"
