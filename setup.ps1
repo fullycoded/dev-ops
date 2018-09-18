@@ -12,4 +12,4 @@ $tempFile = "$env:TEMP\temp-setup.ps1"
 
 "$command; Remove-Item `$PSCommandPath" | Out-file $tempFile
 
-psexec -accepteula -i 2 -h -u $username -p $password "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" $tempFile
+psexec -accepteula -i 2 -h -u $username -p $password powershell -executionpolicy bypass -file "$tempFile"
