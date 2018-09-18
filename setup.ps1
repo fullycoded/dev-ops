@@ -11,10 +11,10 @@ $username = "spinnaker"
 
 $command = { cd 'c:\tspazuredata\'; & .\sm-dev.ps1; cd 'c:\tspservicemanager\'; & .\setup.ps1 -integrationsetup $true; }
 
-$tempFile = "$env:systemdrive\temp-setup.ps1"
+$tempFile = "c:\temp-setup.ps1"
 
 "$command" | Out-file $tempFile
 
-Write-Host $tempFile
+Write-Host "File is: $tempFile"
 
 psexec \\localhost -accepteula -i 2 -h -u $username -p $password powershell -executionpolicy bypass -file "$tempFile"
