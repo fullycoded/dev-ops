@@ -1,5 +1,7 @@
 C:\ProgramData\chocolatey\bin\choco.exe install -y sysinternals
 
+net start server;
+
 cd 'c:\tspazuredata\'; 
 & .\sm-dev.ps1;
 
