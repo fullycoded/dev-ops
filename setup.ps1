@@ -8,7 +8,7 @@ cd 'c:\tspazuredata\'
  cd 'c:\tspazuredata\'; 
  & .\sm-$environment.ps1; 
  cd 'c:\tspservicemanager\'; 
- & .\setup.ps1 -integrationsetup $true; Read-Host;
+ & .\setup.ps1 -integrationsetup $true;
 };
 
 $password = ConvertTo-SecureString "$env:VM_PASSWORD" -AsPlainText -Force
