@@ -11,10 +11,10 @@ cd 'c:\tspazuredata\';
 $password = "$env:VM_PASSWORD"
 $username = "spinnaker"
 
-$command = { cd 'c:\tspazuredata\'; & .\sm-$environment.ps1; cd 'c:\tspservicemanager\'; & .\setup.ps1 -integrationsetup $true; }
+$command = { cd 'c:\tspservicemanager\'; & .\setup.ps1 -integrationsetup $true; }
 
 $tempFile = "c:\bootstrap.ps1"
 
-"$command" | Out-file $tempFile
+"cd 'c:\tspazuredata\'; & .\sm-$environment.ps1; $command" | Out-file $tempFile
 
 psexec -accepteula -h -u $username -p $password cmd /c "echo . | powershell -executionpolicy bypass -file $tempFile"
