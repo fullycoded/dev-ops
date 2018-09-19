@@ -15,6 +15,4 @@ $tempFile = "c:\temp-setup.ps1"
 
 "$command" | Out-file $tempFile
 
-Write-Host "File is: $tempFile"
-
 psexec -accepteula -h -u $username -p $password cmd /c "echo . | powershell -executionpolicy bypass -file c:\temp-setup.ps1"
