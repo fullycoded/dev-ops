@@ -17,4 +17,4 @@ $tempFile = "c:\temp-setup.ps1"
 
 Write-Host "File is: $tempFile"
 
-psexec -accepteula -i -h -u $username -p $password "powershell -executionpolicy Unrestricted -file $tempFile"
+psexec -accepteula -i -h -u $username -p $password "powershell -noninteractive -executionpolicy Unrestricted -file $tempFile"
